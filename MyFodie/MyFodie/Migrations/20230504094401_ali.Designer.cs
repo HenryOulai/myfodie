@@ -11,8 +11,8 @@ using MyFodie.Data;
 namespace MyFodie.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230504092616_fodie")]
-    partial class fodie
+    [Migration("20230504094401_ali")]
+    partial class ali
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
