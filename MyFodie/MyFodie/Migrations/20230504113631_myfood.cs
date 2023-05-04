@@ -4,7 +4,7 @@
 
 namespace MyFodie.Migrations
 {
-    public partial class ali : Migration
+    public partial class myfood : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

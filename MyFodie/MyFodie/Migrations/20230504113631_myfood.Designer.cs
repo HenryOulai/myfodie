@@ -11,8 +11,8 @@ using MyFodie.Data;
 namespace MyFodie.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230504094401_ali")]
-    partial class ali
+    [Migration("20230504113631_myfood")]
+    partial class myfood
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
