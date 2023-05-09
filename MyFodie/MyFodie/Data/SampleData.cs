@@ -14,19 +14,28 @@ namespace MyFodie.Data
                 {
                     OpenIDIssuer = fakeIssuer,
                     OpenIDSubject = "1111111111",
-                    Firstname = "Brad"
-                });
+                    Firstname = "Brad",
+                    Lastname = "Pit",
+                    Telephone = "4324324",
+                    Address = "Los Angles"
+    });
                 database.Accounts.Add(new Account
                 {
                     OpenIDIssuer = fakeIssuer,
                     OpenIDSubject = "2222222222",
-                    Firstname = "Angelina"
+                    Firstname = "Angelina",
+                    Lastname = "Pit",
+                    Telephone = "4324324",
+                    Address = "Los Angles"
                 });
                 database.Accounts.Add(new Account
                 {
                     OpenIDIssuer = fakeIssuer,
                     OpenIDSubject = "3333333333",
-                    Firstname = "Will"
+                    Firstname = "Will",
+                    Lastname = "Pit",
+                    Telephone = "4324324",
+                    Address = "Los Angles"
                 });
             }
 
