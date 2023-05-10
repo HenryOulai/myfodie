@@ -31,7 +31,7 @@ namespace MyFodie.Pages
             var account = database.Accounts.Find(accountID);
             string subject = account.OpenIDSubject;
             string issuer = account.OpenIDIssuer;
-            string name = account.Firstname;
+            string name = account.Name;
 
             // Create the fake identity and principal objects needed to fake a login.
             var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);

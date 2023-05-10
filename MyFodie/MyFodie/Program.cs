@@ -34,14 +34,14 @@ builder.Services.AddAuthentication(options =>
             {
                 OpenIDIssuer = issuer,
                 OpenIDSubject = subject,
-                Firstname = name
+                Name = name
             };
             db.Accounts.Add(account);
         }
         else
         {
             // If the account already exists, just update the name in case it has changed.
-            account.Firstname = name;
+            account.Name = name;
         }
 
         await db.SaveChangesAsync();

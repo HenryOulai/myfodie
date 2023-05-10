@@ -17,11 +17,11 @@ namespace MyFodie.Pages.Shared.Components.LoginMenu
 
         public async Task<IViewComponentResult> InvokeAsync(int maxPriority, bool isDone)
         {
-            var accounts = database.Accounts.OrderBy(a => a.Firstname);
+            var accounts = database.Accounts.OrderBy(a => a.Name);
             var selectList = accounts.Select(p => new SelectListItem
             {
                 Value = p.ID.ToString(),
-                Text = p.Firstname,
+                Text = p.Name,
                 Selected = p.ID == accessControl.LoggedInAccountID
             });
             return View(selectList);
