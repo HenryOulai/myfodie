@@ -1,0 +1,25 @@
+.container {
+    margin-top: 100px;
+    display: flex; /* This sets the display property of the container to flex */
+    flex-wrap: wrap; /* This sets the flex-wrap property to wrap, which ensures the sections wrap to a new line if they can't fit on one line */
+    justify-content: space-between; /* This aligns the sections with space in between them */
+    align-items: center; /* This aligns the sections vertically in the center */
+}
+
+section {
+    flex: 1 1 300px; /* This sets the flex property of the sections, allowing them to grow and shrink as needed with a minimum width of 300px */
+    margin: 10px; /* This adds some margin around each section */
+}
+
+img {
+    max-width: 100%; /* This ensures the images don't exceed the width of their container */
+    height: auto; /* This maintains the aspect ratio of the images when they resize */
+}
+
+p {
+    margin-top: 10px; /* This adds some space between the image and paragraph */
+}
+
+button {
+    margin-top: 10px; /* This adds some space between the paragraph and button */
+}

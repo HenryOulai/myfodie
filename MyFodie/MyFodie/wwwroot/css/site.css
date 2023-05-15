@@ -1,0 +1,94 @@
+header {
+    display: grid;
+    grid-template:
+        "a b c d"
+        "e e e e" /1fr 1fr 1fr 1fr;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    grid-area: auto;
+    width: 80px;
+    margin-left: 100px;
+}
+
+.menu { 
+    grid-area: b;
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+    .menu li {
+        display: inline-block;
+        margin-right: 20px;
+        text-decoration: none;
+        list-style: none;
+    }
+
+    .menu li:last-child {
+            margin-right: 0;
+            text-decoration: none;
+    }
+
+    .login{
+        grid-area: c;
+    }
+    .welcome{
+        grid-area: e;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+    }
+
+.logo-right img{
+    grid-area: d;
+    width: 25px;
+    margin-left: 25px;
+    
+}
+
+.mySlides{
+    width: 80%;
+    height: 400px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.Slide-section{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
+footer {
+    margin-top: 70px;
+    background-color: #f5f5f5; /* Set the background color */
+    padding: 20px; /* Add some padding */
+    display: flex; /* Set the display property to flex */
+    justify-content: space-between; /* Align the content with space in between them */
+    align-items: center; /* Align the content vertically in the center */
+}
+
+.footer-links {
+    display: flex; /* Set the display property to flex */
+    flex-direction: column; /* Align the links in a column */
+}
+
+a {
+    text-decoration: none; /* Remove the underline from the links */
+    color: #333; /* Set the link color */
+    margin-bottom: 10px; /* Add some margin between the links */
+}
+
+p {
+    margin: 0; /* Remove any margin from the paragraph */
+}
+
+

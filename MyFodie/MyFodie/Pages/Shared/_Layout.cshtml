@@ -1,4 +1,5 @@
 ﻿@using MyFodie.Pages.Shared.Components.LoginMenu;
+@inject MyFodie.Data.AccessControl accessControl
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,17 +8,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true">
     <script src="~/js/site.js" asp-append-version="true" defer></script>
     @await RenderSectionAsync("Scripts", required: false)
 </head>
 <body>
     <header>
-        <environment names="Development">
-            @await Component.InvokeAsync(nameof(FakeLoginMenu))
-        </environment>
+        <nav>
+            <div class="logo">
+                <img src="/pictures/logo.png" alt="Logo">
+            </div>
+        </nav>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">All recepts</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="login">
+            <environment names="Development">
+                @await Component.InvokeAsync(nameof(FakeLoginMenu))
+            </environment>
+        </div>
+        <div class="logo-right">
+            <img src="/pictures/profile.png" alt="profile">
+            <img src="/pictures/cart.png" alt="cart">
+        </div>
+        <div class="welcome">
+            <h2>Welcome, @accessControl.LoggedInAccountName!</h2>
+        </div>
     </header>
+    <div class="Slide-section">
+        <div class="w3-content w3-display-container">
+  <img class="mySlides" src="/pictures/ella-olsson-4dQiaWKiL-Y-unsplash.jpg" style="width:80%">
+  <img class="mySlides" src="/pictures/ella-olsson-rD3YrnhTmf0-unsplash.jpg" style="width:80%">
+  <img class="mySlides" src="/pictures/onder-ortel-eCPR_cuDlww-unsplash.jpg" style="width:80%">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+    </div>
     <main>
         @RenderBody()
     </main>
 </body>
+<footer>
+  <div class="footer-links">
+    <a href="#">Home</a>
+    <a href="#">All recepts</a>
+    <a href="#">Contact</a>
+  </div>
+  <p>&copy; 2023 MyFodie Company</p>
+</footer>
 </html>
