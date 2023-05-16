@@ -1,21 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyFodie.Data;
+using MyFodie.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MyFodie.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly AppDbContext database;
+        private readonly AppDbContext _database;
 
         public IndexModel(AppDbContext database)
         {
-            this.database = database;
+            _database = database;
         }
 
-        public void OnGet()
-        {
+        // Property to hold the recipes
+        public List<Recipe> Recipes { get; set; }
 
+        // Fetch the recipes in OnGet
+        public async Task OnGetAsync()
+        {
+            Recipes = await _database.Recipes.ToListAsync();
         }
     }
 }

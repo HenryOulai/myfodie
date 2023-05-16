@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyFodie.Migrations
 {
-    public partial class ali : Migration
+    public partial class AddRecepts : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,7 +28,7 @@ namespace MyFodie.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "Recipes",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -36,11 +36,12 @@ namespace MyFodie.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false)
+                    Ingredient = table.Column<double>(type: "float", nullable: false),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.ID);
+                    table.PrimaryKey("PK_Recipes", x => x.ID);
                 });
         }
 
@@ -50,7 +51,7 @@ namespace MyFodie.Migrations
                 name: "Accounts");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Recipes");
         }
     }
 }
