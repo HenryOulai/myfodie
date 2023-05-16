@@ -10,33 +10,66 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true">
     <link rel="stylesheet" href="~/css/index.css" asp-append-version="true">
     <script src="~/js/site.js" asp-append-version="true" defer></script>
+     <!-- for icons  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- for swiper slider  -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!-- fancy box  -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     @await RenderSectionAsync("Scripts", required: false)
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="/pictures/logo.png" alt="Logo">
+<body class="body-fixed">
+    <!-- start of header  -->
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header-logo">
+                        <a href="index.html">
+                            <img src="logo.png" width="160" height="36" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="main-navigation">
+                        <button class="menu-toggle"><span></span><span></span></button>
+                        <nav class="header-menu">
+                            <ul class="menu food-nav-menu">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#menu">Menu</a></li>
+
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header-right">
+                            <form action="#" class="header-search-form for-des">
+                                <input type="search" class="form-input" placeholder="Search Here...">
+                                <button type="submit">
+                                    <i class="uil uil-search"></i>
+                                </button>
+                            </form>
+                            <a href="javascript:void(0)" class="header-btn header-cart">
+                                <i class="uil uil-shopping-bag"></i>
+                                <span class="cart-number">3</span>
+                            </a>
+                            <a href="javascript:void(0)" class="header-btn">
+                                <i class="uil uil-user-md"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">All recepts</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="login">
-            <environment names="Development">
-                @await Component.InvokeAsync(nameof(FakeLoginMenu))
-            </environment>
-        </div>
-        <div class="logo-right">
-            <img src="/pictures/profile.png" alt="profile">
-            <img src="/pictures/cart.png" alt="cart">
-        </div>
-        <div class="welcome">
-            <h2>Welcome, @accessControl.LoggedInAccountName!</h2>
         </div>
     </header>
+    <!-- header ends  -->
     <div class="Slide-section">
         <div class="w3-content w3-display-container">
   <img class="mySlides" src="/pictures/ella-olsson-4dQiaWKiL-Y-unsplash.jpg" style="width:80%">
