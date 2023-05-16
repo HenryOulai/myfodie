@@ -6,11 +6,11 @@ using MyFodie.Data;
 
 namespace MyFodie.Pages
 {
-    public class IndexModel : PageModel
+    public class ReceptIndex : PageModel
     {
         private readonly AppDbContext database;
 
-        public IndexModel(AppDbContext database)
+        public ReceptIndex(AppDbContext database)
         {
             this.database = database;
         }

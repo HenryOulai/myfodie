@@ -12,7 +12,7 @@ using MyFodie.Data;
 namespace MyFodie.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230511073440_ali")]
+    [Migration("20230515211230_ali")]
     partial class ali
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,7 +55,7 @@ namespace MyFodie.Migrations
                     b.ToTable("Accounts");
                 });
 
-            modelBuilder.Entity("MyFodie.Models.Product", b =>
+            modelBuilder.Entity("MyFodie.Models.recept", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -71,16 +71,17 @@ namespace MyFodie.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Ingredient")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
                     b.HasKey("ID");
 
-                    b.ToTable("Products");
+                    b.ToTable("Recepts");
                 });
 #pragma warning restore 612, 618
         }
