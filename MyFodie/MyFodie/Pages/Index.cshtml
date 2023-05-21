@@ -1,33 +1,21 @@
 ﻿@page
-@model IndexModel
-
-
+@model RecipeIndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
-
 <div class="container">
-    @{
-        var recipes = ViewData["ShowData"] as List<MyFodie.Models.recept>;
-    }
-
     <ul>
-        @foreach (var recipe in recipes)
+        @foreach (var recipe in Model.Recipes)
         {
-            <h3>@recipe.Name</h3>
-            <p>@recipe.Description</p>
-            <p> class="secondtitle">Category:</p>
-            <p>@recipe.Category</p>
-            <p class="secondtitle">Ingredient:</p>
-            <p>@recipe.Ingredient</p>
+            <li>
+                <h3>@recipe.Name</h3>
+                <p>@recipe.Description</p>
+                <p class="secondtitle">Category:</p>
+                <p>@recipe.Category</p>
+                <p class="secondtitle">Ingredient:</p>
+                <p>@recipe.Ingredient</p>
+            </li>
         }
     </ul>
-
-
-
-
-
-
-
 </div>

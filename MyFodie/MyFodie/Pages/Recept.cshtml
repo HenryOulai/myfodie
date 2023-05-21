@@ -1,15 +1,13 @@
 ﻿@page
 @model IndexModel
 
-
 @{
     ViewData["Title"] = "Recipes";
 }
 
-
 <div class="container">
     @{
-        var recipes = ViewData["ShowData"] as List<MyFodie.Models.recept>;
+        var recipes = ViewData["ShowData"] as List<MyFodie.Models.Recipe>;
     }
 
     <ul>

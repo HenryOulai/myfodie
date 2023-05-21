@@ -1,12 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyFodie.Data;
 using MyFodie.Models;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Linq;
 
 namespace MyFodie.Pages
 {
@@ -21,7 +18,7 @@ namespace MyFodie.Pages
 
         public IActionResult OnGet()
         {
-            var samples = database.Recepts.OrderBy(a => a.Name);
+            var samples = _database.Recipes.OrderBy(a => a.Name);
             var show = samples.ToList();
             ViewData["ShowData"] = show;
             return Page();

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyFodie.Migrations
 {
-    public partial class ali : Migration
+    public partial class AddRecipe : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,11 +15,11 @@ namespace MyFodie.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OpenIDIssuer = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OpenIDSubject = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Telephone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OpenIDIssuer = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OpenIDSubject = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Telephone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Created_at = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -28,7 +28,7 @@ namespace MyFodie.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Recepts",
+                name: "Recipes",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -40,7 +40,7 @@ namespace MyFodie.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Recepts", x => x.ID);
+                    table.PrimaryKey("PK_Recipes", x => x.ID);
                 });
         }
 
@@ -50,7 +50,7 @@ namespace MyFodie.Migrations
                 name: "Accounts");
 
             migrationBuilder.DropTable(
-                name: "Recepts");
+                name: "Recipes");
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using MyFodie.Models;
+using System;
+using System.Linq;
 
 namespace MyFodie.Data
 {
@@ -6,7 +8,7 @@ namespace MyFodie.Data
     {
         public static void Create(AppDbContext database)
         {
-            // If there are no fake accounts, add some.
+            // If there are no accounts, add some.
             string fakeIssuer = "https://example.com";
             if (!database.Accounts.Any(a => a.OpenIDIssuer == fakeIssuer))
             {

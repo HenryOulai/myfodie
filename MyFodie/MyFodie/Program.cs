@@ -119,8 +119,8 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<AppDbContext>();
-    SampleData.Create(context);
-    SampleRecep.Create(context);
+    SampleRecipe.Initialize(context);
 }
+
 
 app.Run();

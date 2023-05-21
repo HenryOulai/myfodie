@@ -1,25 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyFodie.Data;
+using MyFodie.Models; // Ensure to include the models namespace if Recipe is there.
+using System.Linq;
 
 namespace MyFodie.Pages
 {
-    public class ReceptIndex : PageModel
+    public class RecipeIndexModel : PageModel
     {
-        private readonly AppDbContext database;
+        private readonly AppDbContext _database;
 
-        public ReceptIndex(AppDbContext database)
+        public RecipeIndexModel(AppDbContext database)
         {
-            this.database = database;
+            _database = database;
         }
+
+        public IList<Recipe> Recipes { get; set; }  // Property to hold the recipes
 
         public IActionResult OnGet()
         {
-            var samples = database.Recepts.OrderBy(a => a.Name);
-            var show = samples.ToList();
-            ViewData["ShowData"] = show;
+            Recipes = _database.Recipes.OrderBy(a => a.Name).ToList();
             return Page();
         }
     }

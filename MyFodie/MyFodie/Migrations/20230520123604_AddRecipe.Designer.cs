@@ -12,8 +12,8 @@ using MyFodie.Data;
 namespace MyFodie.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230515211230_ali")]
-    partial class ali
+    [Migration("20230520123604_AddRecipe")]
+    partial class AddRecipe
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,21 +33,26 @@ namespace MyFodie.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Created_at")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OpenIDIssuer")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OpenIDSubject")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telephone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -55,7 +60,7 @@ namespace MyFodie.Migrations
                     b.ToTable("Accounts");
                 });
 
-            modelBuilder.Entity("MyFodie.Models.recept", b =>
+            modelBuilder.Entity("MyFodie.Models.Recipe", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -81,7 +86,7 @@ namespace MyFodie.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Recepts");
+                    b.ToTable("Recipes");
                 });
 #pragma warning restore 612, 618
         }
